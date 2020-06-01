@@ -8,3 +8,9 @@
 h1{
   font-family: monospace;
 }
+.appear{
+  display: block;
+}
+.disapear{
+  display: none
+}
