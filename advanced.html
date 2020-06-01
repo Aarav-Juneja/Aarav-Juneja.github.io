@@ -5,10 +5,13 @@
     <title>Advanced | Stocks</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Aarav Juneja">
+    <meta name="application-name" content="Stock Introduction">
+    <meta name="description" content="A quick introduction to how stocks work. This was made for my school genius hour project. The presentation part.">
     <link rel="icon" href="master.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="master.css">
     <script src="index.js" charset="utf-8"></script>
   </head>
   <body>
@@ -17,6 +20,7 @@
       <div class="w3-bar w3-black w3-card">
         <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
         <a href="/" class="w3-bar-item w3-button w3-padding-large">Home</a>
+        <a href="types.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Types of Stocks</a>
         <a href="options.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Options</a>
         <a class="w3-bar-item w3-button w3-padding-large w3-hide-small">Advanced</a>
         <a href="contact.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Contact</a>
@@ -26,13 +30,14 @@
 
     <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
     <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+      <a href="types.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Types of Stocks</a>
       <a href="options.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Options</a>
       <a class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Advanced</a>
       <a href="contact.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Contact</a>
     </div>
     <br><br><br><br><br>
     <div style="float:left;width:25%;border:1px solid #ccc">
-      <h2 style="text-align:center!important">Covered Call</h2>
+      <h1 style="text-align:center!important">Covered Call</h1>
       <p>A covered call is when you buy 100 stock and sell 1 call that is above the current price.</p>
       <h4>Example</h4>
         <ul>
@@ -98,7 +103,7 @@
         </ul>
     </div>
     <div style="float:left;width:25%;border:1px solid #ccc">
-      <h2 style="text-align:center!important">Short Vertical Spread<br>(Call)</h2>
+      <h1 style="text-align:center!important">Short Vertical Spread<br>(Call)</h1>
       <ul>
         <li>Buy and write calls</li>
       </ul>
@@ -131,7 +136,7 @@
       </ul>
     </div>
     <div style="float:left;width:25%;border:1px solid #ccc">
-      <h2 style="text-align:center!important">Long Vertical Spread<br>(Call)</h2>
+      <h1 style="text-align:center!important">Long Vertical Spread<br>(Call)</h1>
       <ul>
         <li>Buy and write calls</li>
       </ul>
@@ -204,7 +209,7 @@
       </ul>
     </div>
     <div style="float:left;width:25%;border:1px solid #ccc">
-      <h2 style="text-align:center!important">Iron Condor</h2>
+      <h1 style="text-align:center!important">Iron Condor</h1>
       <ul>
         <li>Sell a OTM call and put</li>
         <li>Buy a OTM call and put(this is more OTM)</li>
