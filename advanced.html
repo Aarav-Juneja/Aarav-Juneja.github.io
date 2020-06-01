@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Advanced | Stocks</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Aarav Juneja">
+    <link rel="icon" href="master.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="index.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="w3-top">
+      <div class="w3-bar w3-black w3-card">
+        <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+        <a href="/" class="w3-bar-item w3-button w3-padding-large">Home</a>
+        <a href="options.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Options</a>
+        <a class="w3-bar-item w3-button w3-padding-large w3-hide-small">Advanced</a>
+        <a href="contact.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Contact</a>
+        <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
+      </div>
+    </div>
+
+    <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+    <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+      <a href="options.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Options</a>
+      <a class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Advanced</a>
+      <a href="contact.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Contact</a>
+    </div>
+    <br><br>
+    <div style="float:left;width:33.33333%;border:1px solid #ccc">
+      <h2>Covered Call</h2>
+      <p>A covered call is when you buy 100 stock and sell 1 call that is above the current price.</p>
+      <h4>Example</h4>
+        <ul>
+          <li>Let's Assume the stock is at $75</li>
+          <li>Buy 100 stock for a price of 7,500</li>
+          <li>Sell/Write <b>a</b> 85 call for 2.00 with a 30 day expiration.</li>
+          <li>After you do this you lose $7,500(from buying stock.)</li>
+          <h4>Scenarios</h4>
+          <h5>Scenario 1</h5>
+          <li>The Stock goes up</li>
+          <li>We will use $85 in this example.</li>
+          <li>Long Stock</li>
+          <ul>
+            <li>$1,000 gain</li>
+          </ul>
+          <li>Short Call</li>
+          <ul>
+            <li>$200 gain</li>
+          </ul>
+          <li>As a total</li>
+          <ul>
+            <li>1,200 gain</li>
+          </ul>
+          <li>Max gain since if it goes higher you will have to pay some of your gain for the call.</li>
+          <h5>Scenario 2</h5>
+          <li>goes down but is above breakeven</li>
+          <li>Use 73.50</li>
+          <li>Long Stock</li>
+          <ul>
+            <li>$150 loss</li>
+          </ul>
+          <li>Short Call</li>
+          <ul>
+            <li>$200 gain</li>
+          </ul>
+          <li>As a whole</li>
+          <ul>
+            <li>$50 gain</li>
+          </ul>
+          <h5>Scenario 3</h5>
+          <li>Goes down under breakeven</li>
+          <li>Let's use $67</li>
+          <li>Long Stock</li>
+          <ul>
+            <li>$800 loss</li>
+          </ul>
+          <li>Short Call</li>
+          <ul>
+            <li>$200 gain</li>
+          </ul>
+          <li>As a whole</li>
+          <ul>
+            <li>$600 loss</li>
+          </ul>
+        </ul>
+        <h4><u>Notes</u></h4>
+        <ul>
+          <li>The breakeven is $73</li>
+          <ul>
+            <li>{current stock price} - {gain from call}</li>
+            <li>This happens since you lose money, but the gain from the call covers you until it is out.</li>
+          </ul>
+        </ul>
+    </div>
+    <div style="float:left;width:33.33333%;border:1px solid #ccc">
+      <h2>Short Vertical Spread(Call)</h2>
+      <ul>
+        <li>Buy and write calls</li>
+      </ul>
+      <h4>Example</h4>
+      <ul>
+        <li>Currently at $95</li>
+        <li>100 stocks each</li>
+        <li>Write/Sell $100 call at 3.00 per share</li>
+        <li>Buy $105 call at 1.20 per share</li>
+        <h4>Scenarios</h4>
+        <h5>Scenario 1</h5>
+        <li>Under 100$</li>
+        <li>100$ call-> $300 profit</li>
+        <li>105$ call-> $120 loss</li>
+        <li>$180 gain(always same gain)</li>
+        <h5>Scenario 2</h5>
+        <li>Above $105</li>
+        <li>Use $130</li>
+        <li>100$ call-> 2,700 loss</li>
+        <li>105$ call-> 2,380 profit</li>
+        <li>$320 loss(always same loss(look below))</li>
+        <li>5.00 - difference between deals</li>
+        <li>Beginning gain/loss - 1.80(+3.00 - 1.20)</li>
+        <li>5.00 - 1.80 = 3.20( $320 max loss)</li>
+        <h5>Scenario 3</h5>
+        <li>Between $100 - $105</li>
+        <li>Use Breakeven</li>
+        <li>Lower strike price + gain at beginning</li>
+        <li>100.00 + 1.80 = 101.80(above is profit and below is loss)</li>
+      </ul>
+    </div>
+    <div style="float:left;width:33.33333%;border:1px solid #ccc">
+      <h2>Long Vertical Spread(Call)</h2>
+      <ul>
+        <li>Buy and write calls</li>
+      </ul>
+      <h4>Example</h4>
+        <ul>
+          <li>Currently at 75.00</li>
+          <li>100 stocks each</li>
+          <li>Buy $70 call at 7.50 per share</li>
+          <li>Write/sell $80 call at 2.50 per share</li>
+            <li>Total cost 500.00(100 stocks)</li>
+      <h4>Scenario 1-4</h4>
+        <h5>Scenario 1</h5>
+          <li>Between both calls</li>
+          <li>Use 79.50</li>
+          <li>Long 70 call-> $200 gain</li>
+          <li>Short 80 call-> $250 gain</li>
+          <li>$500 max loss</li>
+          <li>$450 gain</li>
+          <li>90% gain</li>
+          <ul>
+            <li>If only 70 call</li>
+            <li>750 risk</li>
+            <li>$200 profit</li>
+            <li>26.67% profit</li>
+          </ul>
+      <h5>Scenario 2</h5>
+        <li>Same price as before</li>
+        <li>Long 70 call -> $250 loss</li>
+        <li>Short 80 call -> $250 gain</li>
+        <li>$500 max loss</li>
+        <li>$0 gain</li>
+        <li>0% gain</li>
+        <ul>
+          <li>If only 70 call</li>
+          <li>750 risk</li>
+          <li>$250 loss</li>
+          <li>33% loss</li>
+        </ul>
+      <h5>Scenario 3</h5>
+        <li>Down a lot</li>
+        <li>Use $50</li>
+        <li>Long 70 call -> $750 loss</li>
+        <li>Short 80 call -> $250 gain</li>
+        <li>$500 max loss</li>
+        <li>$500 loss</li>
+        <li>100% loss</li>
+        <ul>
+          <li>If only 70 call</lI>
+          <li>50 risk</li>
+          <li>$750 loss</li>
+          <li>100% loss</li>
+          </ul>
+      <h5>Scenario 4</h5>
+        <li>Up</li>
+        <li>Use $85</li>
+        <li>Long 70 call-> $750 gain</li>
+        <li>Short 80 call-> $250 loss</li>
+        <li>$500 max loss</li>
+        <li>$500 profit</li>
+        <li>100% gain</li>
+        <ul>
+          <li>If only 70 call</li>
+          <li>750 risk</li>
+          <li>750 profit</li>
+          <li>100% gain</li>
+          <h4><u>Notes</u></h4>
+        </ul>
+      <li>In Long Vertical Spread Max loss and Max gain are $500</li>
+      <li>With only prediction unlimited gain but loss can go to $750 at max</li>
+      </ul>
+    </div>
+    <div style="float:left;width:33.33333%;border:1px solid #ccc">
+      <h2>Iron Condor</h2>
+      <ul>
+        <li>Sell a OTM call and put</li>
+        <li>Buy a OTM call and put(this is more OTM)</li>
+      </ul>
+      <h4>Example</h4>
+      <ul>
+        <li>Currently at $75</li>
+        <li>100 stocks(like always)</li>
+        <li>Buy 60 put for 1.00 [100.00] loss</li>
+        <li>Sell 65 Put for $2.00 [200.00] gain</li>
+        <li>Sell 85 call for $2.00 [200.00] gain</li>
+        <li>Buy 90 call for $1.00 [100.00] loss</li>
+        <li>30 day expiration</li>
+        <h4>Scenarios</h4>
+        <h5>Scenario 1</h5>
+        <li>Between calls and Puts</li>
+        <li>60 put -> $100 loss</li>
+        <li>65 Put -> $200 gain</li>
+        <li>85 call -> $200 gain</li>
+        <li>90 call -> $100 loss</li>
+        <li>$200 gain</li>
+        <h5>Scenario 2</h5>
+        <li>Up or Down</li>
+        <li>Use 96.00</li>
+        <li>60 put -> $100 loss</li>
+        <li>65 Put -> $200 gain</li>
+        <li>85 call -> $900 loss</li>
+        <li>90 call -> $500 gain</li>
+        <li>$300 loss(is max loss)</li>
+        <h5>Scenario 3</h5>
+        <li>The breakeven</li>
+        <li>60 put -> $</li>
+        <li>65 Put -> $</li>
+        <li>85 call -> $</li>
+        <li>90 call -> $</li>
+      </ul>
+    </div>
+    <div style="float:left;width:33.33333%;border:1px solid #ccc">
+    </div>
+    <div style="float:left;width:33.33333%;border:1px solid #ccc">
+    </div>
+    <div style="float:left;width:33.33333%;border:1px solid #ccc">
+    </div>
+    <div style="float:left;width:33.33333%;border:1px solid #ccc">
+    </div>
+    <div style="float:left;width:33.33333%;border:1px solid #ccc">
+    </div>
+    <div style="float:left;width:33.33333%;border:1px solid #ccc">
+    </div>
+    <div style="float:left;width:33.33333%;border:1px solid #ccc">
+    </div>
+    <div style="float:left;width:33.33333%;border:1px solid #ccc">
+    </div>
+    <div style="float:left;width:33.33333%;border:1px solid #ccc">
+    </div>
+  </body>
+</html>
