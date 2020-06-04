@@ -1,0 +1,17 @@
+{
+  "short_name": "Stocks",
+  "name": "An introduction to stocks by Aarav Juneja",
+  "description": "A website teaching you about stocks, Created by Aarav Juneja",
+  "start_url": "/",
+  "background_color": "#3367D6",
+  "display": "fullscreen",
+  "scope": "/",
+  "theme_color": "#3367D6",
+  "shortcuts": [
+    {
+      "name": "Contact the creater(Aarav Juneja)"
+      "short_name": "Contact"
+      "url": "/contact.html"
+    }
+  ]
+}

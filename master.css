@@ -6,5 +6,14 @@
   width:33.33333%
 }
 h1{
-  font-family: monospace;
+  font-family: cursive;
+}
+.appear{
+  display: block;
+}
+.disapear{
+  display: none
+}
+body {
+  font-family: "Lato", sans-serif
 }
