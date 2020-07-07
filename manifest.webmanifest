@@ -9,8 +9,8 @@
   "theme_color": "#3367D6",
   "shortcuts": [
     {
-      "name": "Contact the creater(Aarav Juneja)"
-      "short_name": "Contact"
+      "name": "Contact the creater(Aarav Juneja)",
+      "short_name": "Contact",
       "url": "/contact.html"
     }
   ]
