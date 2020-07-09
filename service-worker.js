@@ -10,10 +10,9 @@ if (workbox) {
 
 const registerRoute = workbox.routing.registerRoute;
 const NetworkFirst = workbox.strategies.NetworkFirst;
-/*
+
 registerRoute(
-  ({url}) => url.hostname === 'www.aarav-juneja.github.io',
+  ({request}) => request.destination === 'html',
   new NetworkFirst()
 );
-*/
 new NetworkFirst()
