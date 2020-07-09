@@ -8,8 +8,8 @@ if (workbox) {
   console.log(`Boo! Workbox didn't load 😬`);
 }
 
-const registerRoute = workbox.routing;
-const NetworkFirst = workbox.strategies;
+const registerRoute = workbox.routing.registerRoute;
+const NetworkFirst = workbox.strategies.NetworkFirst;
 
 registerRoute(
   ({request}) => request.destination === 'script',
