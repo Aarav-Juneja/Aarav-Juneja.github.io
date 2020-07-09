@@ -8,11 +8,7 @@ if (workbox) {
   console.log(`Boo! Workbox didn't load 😬`);
 }
 
-//const registerRoute = workbox.routing.registerRoute;
-//onst NetworkFirst = workbox.strategies.NetworkFirst;
-
 workbox.routing.registerRoute(
   ({request}) => request.destination === 'document',
   new workbox.strategies.NetworkFirst()
 );
-//new workbox.strategies.NetworkFirst()
