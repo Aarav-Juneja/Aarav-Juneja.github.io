@@ -7,7 +7,7 @@ if (workbox) {
 } else {
   console.log(`Boo! Workbox didn't load 😬`);
 }
-/*
+
 const registerRoute = workbox.routing;
 const NetworkFirst = workbox.strategies;
 
@@ -15,4 +15,3 @@ registerRoute(
   ({request}) => request.destination === 'script',
   new NetworkFirst()
 );
-*/
