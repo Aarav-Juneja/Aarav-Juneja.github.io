@@ -8,11 +8,11 @@ if (workbox) {
   console.log(`Boo! Workbox didn't load 😬`);
 }
 
-const registerRoute = workbox.routing.registerRoute;
-const NetworkFirst = workbox.strategies.NetworkFirst;
+//const registerRoute = workbox.routing.registerRoute;
+//onst NetworkFirst = workbox.strategies.NetworkFirst;
 
-registerRoute(
-  ({request}) => request.destination === 'html',
+workbox.routing.registerRoute(
+  ({request}) => request.destination === 'text/html',
   new NetworkFirst()
 );
-new NetworkFirst()
+new workbox.strategies.NetworkFirst()
