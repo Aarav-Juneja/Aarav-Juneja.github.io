@@ -12,7 +12,7 @@ if (workbox) {
 //onst NetworkFirst = workbox.strategies.NetworkFirst;
 
 workbox.routing.registerRoute(
-  ({request}) => request.destination === 'text/html',
+  ({request}) => request.destination === 'document',
   new workbox.strategies.NetworkFirst()
 );
 new workbox.strategies.NetworkFirst()
