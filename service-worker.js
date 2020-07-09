@@ -8,8 +8,8 @@ if (workbox) {
   console.log(`Boo! Workbox didn't load 😬`);
 }
 /*
-import {registerRoute} from 'workbox-routing';
-import {NetworkFirst} from 'workbox-strategies';
+const registerRoute = workbox.routing;
+import NetworkFirst = workbox.strategies;
 
 registerRoute(
   ({request}) => request.destination === 'script',
