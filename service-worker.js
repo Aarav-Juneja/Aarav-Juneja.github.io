@@ -9,7 +9,7 @@ if (workbox) {
 }
 /*
 const registerRoute = workbox.routing;
-import NetworkFirst = workbox.strategies;
+const NetworkFirst = workbox.strategies;
 
 registerRoute(
   ({request}) => request.destination === 'script',
