@@ -12,6 +12,6 @@ const registerRoute = workbox.routing.registerRoute;
 const NetworkFirst = workbox.strategies.NetworkFirst;
 
 registerRoute(
-  ({request}) => request.destination === 'script',
+  ({url}) => url.hostname === 'www.aarav-juneja.github.io',
   new NetworkFirst()
 );
