@@ -7,3 +7,10 @@ if (workbox) {
 } else {
   console.log(`Boo! Workbox didn't load 😬`);
 }
+
+import {registerRoute} from 'workbox-routing';
+
+registerRoute(
+  ({request}) => request.destination === 'script',
+  /* ... */
+);
