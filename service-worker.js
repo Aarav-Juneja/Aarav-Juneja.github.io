@@ -14,17 +14,17 @@ console.log('Hello from service-worker.js');
 // );
 
 let data = caches.open("data")
-self.addEventListener("install", (event) => {
-  event.waitUntil(
-    (async () => {
-      const cache = await caches.open("offline");
-      // Setting {cache: 'reload'} in the new request will ensure that the
-      // response isn't fulfilled from the HTTP cache; i.e., it will be from
-      // the network.
-      await cache.add(new Request("offline.html", { cache: "reload" }));
-    })()
-  );
-});
+// self.addEventListener("install", (event) => {
+//   event.waitUntil(
+//     (async () => {
+//       const cache = await caches.open("offline");
+//       // Setting {cache: 'reload'} in the new request will ensure that the
+//       // response isn't fulfilled from the HTTP cache; i.e., it will be from
+//       // the network.
+//       await cache.add(new Request("offline.html", { cache: "reload" }));
+//     })()
+//   );
+// });
 
 self.addEventListener("activate", (event) => {
   event.waitUntil(
