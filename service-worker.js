@@ -13,7 +13,6 @@ console.log('Hello from service-worker.js');
 //   new workbox.strategies.NetworkFirst()
 // );
 
-let data = caches.open("data")
 // self.addEventListener("install", (event) => {
 //   event.waitUntil(
 //     (async () => {
@@ -29,6 +28,7 @@ let data = caches.open("data")
 self.addEventListener("activate", (event) => {
   event.waitUntil(
     (async () => {
+      let data = caches.open("data")
       // Enable navigation preload if it's supported.
       // See https://developers.google.com/web/updates/2017/02/navigation-preload
       if ("navigationPreload" in self.registration) {
@@ -43,6 +43,8 @@ self.addEventListener("activate", (event) => {
 });
 
 self.addEventListener("fetch", event => {
+  // the data cache
+  let data = caches.open("data")
   // the url
   const url = new URL(event.request.url);
   // We only want to call event.respondWith() if this is a navigation request
