@@ -34,6 +34,7 @@ self.addEventListener("activate", (event) => {
       if ("navigationPreload" in self.registration) {
         await self.registration.navigationPreload.enable();
       }
+      data.add("offline.html")
     })()
   );
 
@@ -41,7 +42,9 @@ self.addEventListener("activate", (event) => {
   self.clients.claim();
 });
 
-self.addEventListener("fetch", (event) => {
+self.addEventListener("fetch", event => {
+  // the url
+  const url = new URL(event.request.url);
   // We only want to call event.respondWith() if this is a navigation request
   // for an HTML page.
   if (event.request.mode === "navigate") {
@@ -57,7 +60,7 @@ self.addEventListener("fetch", (event) => {
           // Always try the network first.
           const networkResponse = await fetch(event.request);
           // save data for later use
-          data.put(event.request, networkResponse)
+          data.put(url, networkResponse);
           return networkResponse;
         } catch (error) {
           // catch is only triggered if an exception is thrown, which is likely
@@ -65,7 +68,12 @@ self.addEventListener("fetch", (event) => {
           // If fetch() returns a valid HTTP response with a response code in
           // the 4xx or 5xx range, the catch() will NOT be called.
           console.log("Fetch failed; returning cache instead.", error);
-          const cachedResponse = await data.match(event.request);
+          const cachedResponse = await data.match(url);
+          if (!cachedResponse)
+          {
+            const offline = await data.match("offline.html");
+            return offline;
+          }
           return cachedResponse;
         }
       })()
