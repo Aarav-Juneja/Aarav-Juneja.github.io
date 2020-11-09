@@ -89,7 +89,7 @@ self.addEventListener("fetch", event => {
   // were no service worker involvement.
 });
 
-self.addEventListner("push", e=>{
+self.addEventListener("push", e=>{
   let obj = e.data.json();
   switch (obj.action) {
     case "newNotification":
