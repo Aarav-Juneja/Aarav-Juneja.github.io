@@ -28,8 +28,7 @@ console.log('Hello from service-worker.js');
 self.addEventListener("activate", (event) => {
   event.waitUntil(
     (async () => {
-      let data = caches.open("data")
-      console.log(data, caches)
+      let data = await caches.open("data")
       // Enable navigation preload if it's supported.
       // See https://developers.google.com/web/updates/2017/02/navigation-preload
       if ("navigationPreload" in self.registration) {
@@ -45,7 +44,7 @@ self.addEventListener("activate", (event) => {
 
 self.addEventListener("fetch", event => {
   // the data cache
-  let data = caches.open("data")
+  let data = await caches.open("data")
   console.log(data, caches)
   // the url
   const url = new URL(event.request.url);
