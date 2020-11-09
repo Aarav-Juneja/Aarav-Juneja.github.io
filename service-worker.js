@@ -43,9 +43,6 @@ self.addEventListener("activate", (event) => {
 });
 
 self.addEventListener("fetch", event => {
-  // the data cache
-  let data = await caches.open("data")
-  console.log(data, caches)
   // the url
   const url = new URL(event.request.url);
   // We only want to call event.respondWith() if this is a navigation request
@@ -53,6 +50,8 @@ self.addEventListener("fetch", event => {
   if (event.request.mode === "navigate") {
     event.respondWith(
       (async () => {
+        // the data cache
+        let data = await caches.open("data")
         try {
           // First, try to use the navigation preload response if it's supported.
           const preloadResponse = await event.preloadResponse;
