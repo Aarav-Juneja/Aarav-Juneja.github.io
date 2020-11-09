@@ -88,3 +88,13 @@ self.addEventListener("fetch", event => {
   // event.respondWith(), the request will be handled by the browser as if there
   // were no service worker involvement.
 });
+
+self.addEventListner("push", e=>{
+  let obj = e.data.json();
+  switch (obj.action) {
+    case "newNotification":
+      registration.showNotification(obj.title, {
+        body: obj.msg
+      })
+  }
+})
