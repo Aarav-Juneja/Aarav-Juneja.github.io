@@ -39,7 +39,7 @@ self.addEventListener("activate", (event) => {
   );
 
   // Tell the active service worker to take control of the page immediately.
-  self.clients.claim();
+  // self.clients.claim();
 });
 
 self.addEventListener("fetch", event => {
