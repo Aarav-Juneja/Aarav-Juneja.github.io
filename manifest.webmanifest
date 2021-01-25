@@ -17,12 +17,14 @@
     {
       "name": "The types of stocks",
       "short_name": "Types",
-      "description": "Go to the types of stocks page"
+      "description": "Go to the types of stocks page",
+      "url": "/Stocks/types.html"
     },
     {
       "name": "The types of stocks",
       "short_name": "Advanced",
-      "description": "Go to the types of stocks page"
+      "description": "Go to the types of stocks page",
+      "url": "/Stocks/advanced.html"
     }
   ]
 }
