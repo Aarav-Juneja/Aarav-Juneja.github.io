@@ -62,7 +62,7 @@ self.addEventListener("fetch", event => {
           // Always try the network first.
           const networkResponse = await fetch(event.request);
           // save data for later use
-          data.put(url, networkResponse);
+          data.put(url, networkResponse.clone());
           return networkResponse;
         } catch (error) {
           // catch is only triggered if an exception is thrown, which is likely
