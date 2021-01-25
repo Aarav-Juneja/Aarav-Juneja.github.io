@@ -56,6 +56,7 @@ self.addEventListener("fetch", event => {
           // First, try to use the navigation preload response if it's supported.
           const preloadResponse = await event.preloadResponse;
           if (preloadResponse) {
+            data.put(url, preloadResponse.clone());
             return preloadResponse;
           }
 
