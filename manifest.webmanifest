@@ -1,17 +1,28 @@
 {
-  "short_name": "Stocks",
-  "name": "An introduction to stocks by Aarav Juneja",
-  "description": "A website teaching you about stocks, Created by Aarav Juneja",
-  "start_url": "/",
+  "short_name": "Redirect",
+  "name": "A webpage telling you to change to different webpage",
+  "description": "A website directing to a webpage about stocks, Created by Aarav Juneja",
+  "start_url": "/Stocks/",
   "background_color": "#3367D6",
   "display": "fullscreen",
   "scope": "/",
   "theme_color": "#3367D6",
   "shortcuts": [
     {
-      "name": "Contact the creater(Aarav Juneja)",
-      "short_name": "Contact",
-      "url": "/contact.html"
+      "name": "Go to Stoks",
+      "short_name": "Stocks",
+      "description": "The main homepage for stocks",
+      "url": "/Stocks/"
+    },
+    {
+      "name": "The types of stocks",
+      "short_name": "Types",
+      "description": "Go to the types of stocks page"
+    },
+    {
+      "name": "The types of stocks",
+      "short_name": "Advanced",
+      "description": "Go to the types of stocks page"
     }
   ]
 }
