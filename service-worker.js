@@ -1,4 +1,4 @@
-console.log('Hello from service-worker.js');
+console.log("Hello from service-worker.js");
 //
 // importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js');
 //
@@ -25,16 +25,16 @@ console.log('Hello from service-worker.js');
 //   );
 // });
 
-self.addEventListener("activate", (event) => {
+self.addEventListener("activate", event => {
   event.waitUntil(
     (async () => {
-      let data = await caches.open("data")
+      let data = await caches.open("data");
       // Enable navigation preload if it's supported.
       // See https://developers.google.com/web/updates/2017/02/navigation-preload
       if ("navigationPreload" in self.registration) {
         await self.registration.navigationPreload.enable();
       }
-      data.add("offline.html")
+      data.add("offline.html");
     })()
   );
 
@@ -51,7 +51,7 @@ self.addEventListener("fetch", event => {
     event.respondWith(
       (async () => {
         // the data cache
-        let data = await caches.open("data")
+        let data = await caches.open("data");
         try {
           // First, try to use the navigation preload response if it's supported.
           const preloadResponse = await event.preloadResponse;
@@ -71,8 +71,7 @@ self.addEventListener("fetch", event => {
           // the 4xx or 5xx range, the catch() will NOT be called.
           console.log("Fetch failed; returning cache instead.", error);
           const cachedResponse = await data.match(url);
-          if (!cachedResponse)
-          {
+          if (!cachedResponse) {
             const offline = await data.match("offline.html");
             return offline;
           }
@@ -81,7 +80,6 @@ self.addEventListener("fetch", event => {
       })()
     );
   }
-
   // If our if() condition is false, then this fetch handler won't intercept the
   // request. If there are any other fetch handlers registered, they will get a
   // chance to call event.respondWith(). If no fetch handlers call
