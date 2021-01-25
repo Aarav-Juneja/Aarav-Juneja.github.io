@@ -87,12 +87,15 @@ self.addEventListener("fetch", event => {
   // were no service worker involvement.
 });
 
-self.addEventListener("push", e=>{
+self.addEventListener("push", e => {
+  // in sending code for notifications make sure to use "Notification.requestPermission"
+  // TODO: Get local storage var "enabled": true/false/null
   let obj = e.data.json();
   switch (obj.action) {
     case "newNotification":
       registration.showNotification(obj.title, {
         body: obj.msg
-      })
+      });
   }
-})
+});
+
